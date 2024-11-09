@@ -33,8 +33,12 @@ const widgetTemplatePublish = () => {
                 return;
             }
 
-            publishWidgetTemplate(widgetTemplate, widgetTemplateDir);
+            publishWidgetTemplate(convertUnderscoresToSpaces(widgetTemplate), widgetTemplateDir);
         });
 };
+
+const convertUnderscoresToSpaces = (inputString: string) =>{
+    return inputString.replace(/_/g, ' ');
+}
 
 export default widgetTemplatePublish;
